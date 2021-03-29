@@ -1,0 +1,22 @@
+bootstrap_4:
+  version: 1.0
+  css:
+    base:
+      https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css: { type: external, minified: true }
+  js:
+    https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+block_accordion:
+  version: 1.0
+  css:
+    theme:
+      assets/block.accordion.css: {}
+  js:
+    assets/block.accordion.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - blocks_extra/bootstrap_4

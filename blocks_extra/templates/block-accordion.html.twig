@@ -1,0 +1,21 @@
+{# 
+/**
+ * @file
+ * Theme override to display a block_accordion.
+ * @see template_preprocess_block_accordion()
+ *	accordions 
+ */
+ #}
+
+<div class="block-accordion">
+
+	{% if block_title %}
+		<h2 class="block-title">{{ block_title }}</h2>
+	{% endif %}
+
+	<div class="block-content">
+		{{ block_content }}
+	</div>
+	
+</div>
+

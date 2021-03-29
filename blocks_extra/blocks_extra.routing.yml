@@ -1,0 +1,8 @@
+blocks_extra.dashboard:
+  path: '/dashboard' 
+  defaults: 
+    _controller: '\Drupal\blocks_extra\Controller\DashboardController::build' 
+    _title: 'Dashboard'
+  requirements: 
+    _permission: 'access content'
+    _role: 'authenticated' 

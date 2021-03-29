@@ -1,0 +1,7 @@
+.block-accordion .card { border-radius: 0; border: none; background: #f7f7f7; }
+.block-accordion .card-header { padding: 0; border-radius: 0; }
+.block-accordion .card-link { position: relative; padding: .75rem 1.25rem; outline: none; text-transform: uppercase; color: #333; border: none; cursor: pointer; }
+.block-accordion .card-link:before { content: ''; width: 14px; height: 2px; background: #333; position: absolute; top: calc(50% - 1px); right: 1rem; display: block; transition: all 0.3s; }
+.block-accordion .card-link:after { content: ''; width: 2px; height: 14px; background: #333; position: absolute; top: calc(50% - 7px); right: calc(1rem + 6px); display: block; transition: all 0.3s; }
+.block-accordion .card-link[aria-expanded='true']:after { transform: rotate(90deg) translateX(-1px); }
+.block-accordion .card-link[aria-expanded='true']:before { transform: rotate(180deg); }

@@ -1,0 +1,46 @@
+<?php 
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_theme().
+ */
+function blocks_extra_theme() {
+  	$themes['block_accordion'] = [
+      'preprocess functions' => [
+        'template_preprocess_block_accordion',
+      ],
+      'variables' => array(
+        'block_title' => NULL,
+        'block_content' => NULL,
+        'accordion' => ARRAY(),
+      ),
+      'file' => 'blocks_extra.theme.inc',
+    ];
+
+
+    $themes['page_dashboard'] = [
+      'preprocess functions' => [
+        'template_preprocess_page_dashboard',
+      ],
+      'variables' => array(
+        'dashboard_content' => NULL,
+      ),
+      'file' => 'blocks_extra.theme.inc',
+    ];
+
+
+    return $themes;
+}
+
+/**
+ * Implements hook_user_login().
+ */
+function blocks_extra_user_login($account) {
+
+  $current_route = \Drupal::routeMatch()->getRouteName();
+  if (!in_array($current_route, ['user.reset', 'user.reset.login'])) {
+    $response = new RedirectResponse(Url::fromRoute('blocks_extra.dashboard')->toString());
+    $response->send();
+  }
+}
